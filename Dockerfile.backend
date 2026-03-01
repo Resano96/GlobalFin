@@ -1,0 +1,28 @@
+# Dockerfile para Backend (Java/Maven)
+FROM eclipse-temurin:21-jdk-jammy
+
+WORKDIR /workspace
+
+# Instalar Maven y herramientas
+RUN apt-get update && \
+    apt-get install -y \
+    maven \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar el código del proyecto
+COPY ./backend /workspace/backend
+COPY ./ui-b2b /workspace/ui-b2b
+COPY ./pom.xml /workspace/pom.xml
+COPY ./checkstyle-sprint1.xml /workspace/checkstyle-sprint1.xml
+COPY ./checkstyle.xml /workspace/checkstyle.xml
+COPY ./spotbugs-exclude.xml /workspace/spotbugs-exclude.xml
+
+# Variables de entorno
+ENV MAVEN_OPTS="-Xmx512m"
+ENV LANG=es_ES.UTF-8
+
+# Entrypoint por defecto es Maven
+ENTRYPOINT ["mvn"]
+CMD ["-h"]
