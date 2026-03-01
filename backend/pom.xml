@@ -80,6 +80,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Spring Security Test -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <!-- OWASP Dependency Check -->
         <dependency>
             <groupId>org.owasp</groupId>
@@ -110,10 +117,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <configLocation>${basedir}/../checkstyle-sprint1.xml</configLocation>
-                    <encoding>UTF-8</encoding>
-                    <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
+                    <configLocation>../checkstyle-sprint1.xml</configLocation>
                 </configuration>
                 <executions>
                     <execution>
