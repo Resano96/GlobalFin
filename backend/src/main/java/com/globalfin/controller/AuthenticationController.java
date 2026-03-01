@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Endpoint: POST /api/auth/login
  */
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthenticationController {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
