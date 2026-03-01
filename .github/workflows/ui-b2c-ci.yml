@@ -1,0 +1,52 @@
+name: UI B2C (Flutter) - Build & Test
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'ui-b2c/**'
+      - '.github/workflows/ui-b2c-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'ui-b2c/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.13.x'
+        channel: 'stable'
+    
+    - name: Install dependencies
+      working-directory: ui-b2c
+      run: flutter pub get
+    
+    - name: Analyze code
+      working-directory: ui-b2c
+      run: flutter analyze
+    
+    - name: Run tests
+      working-directory: ui-b2c
+      run: flutter test --coverage
+    
+    - name: Build APK (Android)
+      working-directory: ui-b2c
+      run: flutter build apk --release
+    
+    - name: Build iOS (IPA)
+      working-directory: ui-b2c
+      run: flutter build ios --release --no-codesign
+      continue-on-error: true
+    
+    - name: Upload coverage
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./ui-b2c/coverage/lcov.info
+        fail_ci_if_error: false

@@ -1,0 +1,85 @@
+# Compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/dependency-reduced-pom.xml
+ui-b2b/target/
+ui-b2b/.classpath
+ui-b2b/.project
+ui-b2b/.settings/
+
+# Gradle
+.gradle
+build/
+gradle-build-cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# IntelliJ IDEA
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+bin/
+.metadata
+local.properties
+
+# Flutter
+ui-b2c/.dart_tool/
+ui-b2c/.flutter-plugins
+ui-b2c/.flutter-plugins-dependencies
+ui-b2c/.packages
+ui-b2c/coverage/
+ui-b2c/build/
+ui-b2c/pubspec.lock
+ui-b2c/ios/Flutter/Flutter.podspec
+ui-b2c/ios/Flutter/Flutter.framework
+ui-b2c/ios/Flutter/GeneratedPluginRegistrant.swift
+
+# Dart
+.packages
+.pub-cache/
+.pub/
+
+# Node (if needed)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# JavaFX
+ui-b2b/jmods/

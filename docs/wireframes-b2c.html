@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalFin - Wireframes Low-Fi B2C</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .screens-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .wireframe-group {
+            margin-bottom: 20px;
+        }
+
+        .wireframe-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .wireframe-description {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Frame */
+        .mobile-frame {
+            width: 375px;
+            height: 667px;
+            border: 8px solid #333;
+            border-radius: 40px;
+            background: white;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .mobile-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            font-size: 12px;
+            color: #333;
+        }
+
+        /* Global Elements */
+        .app-bar {
+            background: #333;
+            color: white;
+            padding: 12px 16px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #666;
+            font-weight: bold;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ddd;
+            background: #fafafa;
+            height: 60px;
+            align-items: center;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .bottom-nav-item {
+            text-align: center;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .bottom-nav-item.active {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Splash Screen */
+        .splash-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .splash-logo {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+
+        .splash-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .splash-subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 40px;
+        }
+
+        .splash-loader {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #ddd;
+            border-top-color: #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Login Screen */
+        .login-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .login-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .login-subheading {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 44px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 12px;
+            font-size: 12px;
+            font-family: Arial;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin: -12px 0 20px 0;
+        }
+
+        .forgot-password a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .login-button {
+            width: 100%;
+            height: 44px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .signup-text {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .signup-text a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Dashboard Screen */
+        .dashboard-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .balance-card {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .balance-label {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .balance-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .action-button {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .action-button-icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .recent-transactions {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+        }
+
+        .transaction-left {
+            flex: 1;
+        }
+
+        .transaction-concept {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .transaction-date {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .transaction-amount {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .transaction-amount.debit {
+            color: #e74c3c;
+        }
+
+        .transaction-amount.credit {
+            color: #2ecc71;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .wireframe-group {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GlobalFin - Wireframes Low-Fi (B2C App Mobile)</h1>
+        <p class="subtitle">Especificación visual en escala de grises. Sin colores de marca. Viewport: 375x667 (iPhone)</p>
+
+        <div class="screens-row">
+            <!-- SPLASH SCREEN -->
+            <div class="wireframe-group">
+                <div class="wireframe-title">1. Splash Screen</div>
+                <div class="wireframe-description">Pantalla inicial (2 segundos) - Transición automática a Login</div>
+
+                <div class="mobile-frame">
+                    <div class="mobile-notch"></div>
+                    <div class="mobile-screen">
+                        <div class="splash-content">
+                            <div class="splash-logo">🏦</div>
+                            <div class="splash-title">GlobalFin</div>
+                            <div class="splash-subtitle">Banca para todos</div>
+                            <div class="splash-loader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOGIN SCREEN -->
+            <div class="wireframe-group">
+                <div class="wireframe-title">2. Login B2C</div>
+                <div class="wireframe-description">Autenticación - Email + Contraseña validados localmente</div>
+
+                <div class="mobile-frame">
+                    <div class="mobile-notch"></div>
+                    <div class="mobile-screen">
+                        <div class="app-bar">GlobalFin</div>
+
+                        <div class="login-content">
+                            <div class="login-header">
+                                <div class="login-heading">Bienvenido</div>
+                                <div class="login-subheading">Ingresa con tu cuenta</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input class="form-input" type="email" placeholder="email@globalfin.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Contraseña</label>
+                                <input class="form-input" type="password" placeholder="••••••••">
+                            </div>
+
+                            <div class="forgot-password">
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+
+                            <button class="login-button">INGRESAR</button>
+
+                            <div class="signup-text">
+                                ¿No tienes cuenta? <a href="#">Regístrate aquí</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="screens-row">
+            <!-- DASHBOARD SCREEN -->
+            <div class="wireframe-group">
+                <div class="wireframe-title">3. Dashboard Cliente</div>
+                <div class="wireframe-description">Home - KPIs, acciones rápidas, últimas transacciones</div>
+
+                <div class="mobile-frame">
+                    <div class="mobile-notch"></div>
+                    <div class="mobile-screen">
+                        <div class="app-bar">GlobalFin</div>
+
+                        <div class="dashboard-content">
+                            <div class="greeting">Hola, Usuario 👋</div>
+
+                            <div class="balance-card">
+                                <div class="balance-label">Saldo disponible</div>
+                                <div class="balance-amount">$125,450.50</div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <div class="action-button">
+                                    <div class="action-button-icon">👁️</div>
+                                    Ver movimientos
+                                </div>
+                                <div class="action-button">
+                                    <div class="action-button-icon">💸</div>
+                                    Transferir
+                                </div>
+                                <div class="action-button">
+                                    <div class="action-button-icon">💳</div>
+                                    Pagar servicios
+                                </div>
+                                <div class="action-button">
+                                    <div class="action-button-icon">📋</div>
+                                    Solicitar préstamo
+                                </div>
+                            </div>
+
+                            <div class="recent-transactions">Últimos movimientos</div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Transferencia recibida</div>
+                                    <div class="transaction-date">Hoy, 09:15 AM</div>
+                                </div>
+                                <div class="transaction-amount credit">+$5,000</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Pago de servicios</div>
+                                    <div class="transaction-date">Ayer, 14:30 PM</div>
+                                </div>
+                                <div class="transaction-amount debit">-$250</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Compra en línea</div>
+                                    <div class="transaction-date">Ayer, 11:00 AM</div>
+                                </div>
+                                <div class="transaction-amount debit">-$180.99</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Depósito inicial</div>
+                                    <div class="transaction-date">2 días atrás</div>
+                                </div>
+                                <div class="transaction-amount credit">+$50,000</div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div class="bottom-nav-item active">🏠 Home</div>
+                            <div class="bottom-nav-item">📊 Transacciones</div>
+                            <div class="bottom-nav-item">💳 Tarjetas</div>
+                            <div class="bottom-nav-item">📞 Soporte</div>
+                            <div class="bottom-nav-item">👤 Perfil</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRANSACTIONS SCREEN -->
+            <div class="wireframe-group">
+                <div class="wireframe-title">4. Movimientos / Historial</div>
+                <div class="wireframe-description">Filtros, lista con scroll infinito, transacciones agrupadas por fecha</div>
+
+                <div class="mobile-frame">
+                    <div class="mobile-notch"></div>
+                    <div class="mobile-screen">
+                        <div class="app-bar">Movimientos</div>
+
+                        <div class="dashboard-content">
+                            <div style="margin-bottom: 15px;">
+                                <div style="font-size: 11px; color: #999; margin-bottom: 5px;">Filtrar por:</div>
+                                <div style="display: flex; gap: 8px; font-size: 11px;">
+                                    <button style="padding: 6px 12px; border: 1px solid #ddd; background: #f5f5f5; border-radius: 4px;">📅 Rango</button>
+                                    <button style="padding: 6px 12px; border: 1px solid #ddd; background: #f5f5f5; border-radius: 4px;">Tipo</button>
+                                    <button style="padding: 6px 12px; border: 1px solid #ddd; background: #f5f5f5; border-radius: 4px;">Estado</button>
+                                </div>
+                            </div>
+
+                            <div style="font-size: 11px; font-weight: bold; color: #666; margin-bottom: 10px;">MARZO 2026</div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Transferencia a Juan P.</div>
+                                    <div class="transaction-date">1 Mar, 15:45</div>
+                                </div>
+                                <div class="transaction-amount debit">-$500</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Compra Supermercado</div>
+                                    <div class="transaction-date">1 Mar, 12:30</div>
+                                </div>
+                                <div class="transaction-amount debit">-$125.50</div>
+                            </div>
+
+                            <div style="font-size: 11px; font-weight: bold; color: #666; margin-bottom: 10px; margin-top: 15px;">FEBRERO 2026</div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Recepción de sueldo</div>
+                                    <div class="transaction-date">28 Feb, 10:00</div>
+                                </div>
+                                <div class="transaction-amount credit">+$3,500</div>
+                            </div>
+
+                            <div class="transaction-item">
+                                <div class="transaction-left">
+                                    <div class="transaction-concept">Pago Netflix</div>
+                                    <div class="transaction-date">15 Feb, 08:00</div>
+                                </div>
+                                <div class="transaction-amount debit">-$9.99</div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px; font-size: 11px; color: #999;">
+                                ↓ Scroll para cargar más...
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div class="bottom-nav-item">🏠 Home</div>
+                            <div class="bottom-nav-item active">📊 Transacciones</div>
+                            <div class="bottom-nav-item">💳 Tarjetas</div>
+                            <div class="bottom-nav-item">📞 Soporte</div>
+                            <div class="bottom-nav-item">👤 Perfil</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; color: #999; font-size: 12px; margin-top: 60px; padding: 20px;">
+            <p>Wireframe especificación - Blanco y Negro (Low-Fidelidad)</p>
+            <p style="margin-top: 10px; font-size: 11px;">
+                ✓ Importar a Figma para validación visual <br>
+                ✓ Agregar colores de marca (Primary: #003DA5, Success: #2ECC71, Error: #E74C3C) <br>
+                ✓ Definir tipografía final (Roboto, Poppins, etc)
+            </p>
+        </div>
+    </div>
+</body>
+</html>

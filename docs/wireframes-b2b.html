@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalFin - Wireframes Low-Fi B2B</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        .wireframe-group {
+            margin-bottom: 60px;
+        }
+
+        .wireframe-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .wireframe-description {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .wireframe {
+            background: white;
+            border: 2px solid #333;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        /* B2B Login */
+        .b2b-login {
+            max-width: 1280px;
+            height: 1024px;
+        }
+
+        .b2b-header {
+            width: 100%;
+            height: 80px;
+            border-bottom: 1px solid #999;
+            padding: 10px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .b2b-header-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .b2b-header-subtitle {
+            font-size: 11px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .b2b-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 944px;
+        }
+
+        .b2b-login-form {
+            width: 400px;
+            border: 1px solid #999;
+            padding: 40px;
+            background: #fafafa;
+        }
+
+        .form-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #000;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 36px;
+            border: 1px solid #999;
+            background: white;
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        .form-link {
+            font-size: 11px;
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-button {
+            width: 100%;
+            height: 40px;
+            background: #333;
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .form-footer {
+            font-size: 10px;
+            color: #999;
+            text-align: center;
+        }
+
+        /* B2B Dashboard */
+        .b2b-dashboard {
+            display: flex;
+            height: 900px;
+        }
+
+        .b2b-sidebar {
+            width: 220px;
+            border-right: 1px solid #999;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .b2b-sidebar-item {
+            padding: 12px 10px;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+            font-size: 12px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .b2b-sidebar-item:hover {
+            background: #e8e8e8;
+        }
+
+        .b2b-main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .b2b-toolbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #999;
+        }
+
+        .b2b-search {
+            flex: 1;
+            height: 32px;
+            border: 1px solid #999;
+            padding: 6px 10px;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        .b2b-widget-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .b2b-widget {
+            border: 1px solid #999;
+            padding: 15px;
+            background: #fafafa;
+            min-height: 80px;
+        }
+
+        .widget-title {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .widget-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .b2b-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        .b2b-table th {
+            background: #f0f0f0;
+            border: 1px solid #999;
+            padding: 8px;
+            font-weight: bold;
+            text-align: left;
+            color: #333;
+        }
+
+        .b2b-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            color: #333;
+        }
+
+        .b2b-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .wireframe {
+                page-break-inside: avoid;
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GlobalFin - Wireframes Low-Fi (B2B Dashboard)</h1>
+        <p style="text-align: center; margin-bottom: 30px; color: #666;">
+            Especificación visual en escala de grises. Sin colores de marca.
+        </p>
+
+        <!-- B2B LOGIN -->
+        <div class="wireframe-group">
+            <div class="wireframe-title">1. Login B2B - Pantalla de autenticación</div>
+            <div class="wireframe-description">
+                Empleados ingresan con email y contraseña. Navegación: Tab+Enter sin ratón.
+            </div>
+
+            <div class="wireframe b2b-login">
+                <div class="b2b-header">
+                    <div class="b2b-header-title">▶ GlobalFin Banking</div>
+                    <div class="b2b-header-subtitle">© 2026 Servicios Financieros</div>
+                </div>
+
+                <div class="b2b-content">
+                    <div class="b2b-login-form">
+                        <div class="form-title">Inicia sesión</div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input class="form-input" placeholder="admin@globalfin.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Contraseña *</label>
+                            <input class="form-input" type="password" placeholder="••••••••••">
+                        </div>
+
+                        <div style="text-align: right; margin-bottom: 20px;">
+                            <span class="form-link">¿Olvidaste tu contraseña?</span>
+                        </div>
+
+                        <button class="form-button">INGRESAR</button>
+
+                        <div class="form-footer">v1.0.0 | Todos los derechos reservados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B2B DASHBOARD -->
+        <div class="wireframe-group">
+            <div class="wireframe-title">2. Dashboard Principal - Home B2B</div>
+            <div class="wireframe-description">
+                Vista principal con KPIs, búsqueda rápida (keyboard), últimas transacciones en tabla virtualizada.
+            </div>
+
+            <div class="wireframe" style="height: auto; display: flex;">
+                <div class="b2b-dashboard">
+                    <div class="b2b-sidebar">
+                        <strong style="display: block; margin-bottom: 20px; font-size: 13px;">▌ Menu</strong>
+                        <div class="b2b-sidebar-item">📊 Dashboard</div>
+                        <div class="b2b-sidebar-item">💳 Transacciones</div>
+                        <div class="b2b-sidebar-item">👥 Clientes</div>
+                        <div class="b2b-sidebar-item">📈 Reportes</div>
+                        <div class="b2b-sidebar-item">⚙️ Configuración</div>
+                        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ccc;">
+                        <div class="b2b-sidebar-item" style="color: #666;">👤 admin@globalfin.com</div>
+                        <div class="b2b-sidebar-item">🚪 Logout</div>
+                    </div>
+
+                    <div class="b2b-main">
+                        <div class="b2b-toolbar">
+                            <input class="b2b-search" placeholder="🔍 Buscar transacción (Ctrl+K)...">
+                            <button style="padding: 0 20px; border: 1px solid #999; background: white; cursor: pointer;">⇧ Exportar</button>
+                        </div>
+
+                        <div style="margin-bottom: 10px; font-weight: bold; color: #333;">KPIs del día</div>
+
+                        <div class="b2b-widget-grid">
+                            <div class="b2b-widget">
+                                <div class="widget-title">TRANSACCIONES PROCESADAS</div>
+                                <div class="widget-value">1,247</div>
+                            </div>
+                            <div class="b2b-widget">
+                                <div class="widget-title">MONTO MOVIDO (USD)</div>
+                                <div class="widget-value">$8.5M</div>
+                            </div>
+                            <div class="b2b-widget">
+                                <div class="widget-title">CLIENTES ACTIVOS</div>
+                                <div class="widget-value">3,821</div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0 10px 0; font-weight: bold; color: #333;">Últimas transacciones</div>
+
+                        <table class="b2b-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30px;"><input type="checkbox"></th>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Monto</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>TXN001</td>
+                                    <td>Empresa ABC SPA</td>
+                                    <td>$50,000</td>
+                                    <td>2026-03-01 09:23</td>
+                                    <td>✓ Completado</td>
+                                    <td>Ver | Editar</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>TXN002</td>
+                                    <td>Juan Pérez López</td>
+                                    <td>$15,500</td>
+                                    <td>2026-03-01 08:45</td>
+                                    <td>⏱ Pendiente</td>
+                                    <td>Ver | Editar</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>TXN003</td>
+                                    <td>Comercio XYZ</td>
+                                    <td>$3,250</td>
+                                    <td>2026-03-01 08:12</td>
+                                    <td>✓ Completado</td>
+                                    <td>Ver | Editar</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>TXN004</td>
+                                    <td>Tech Startup Inc</td>
+                                    <td>$125,000</td>
+                                    <td>2026-02-28 16:33</td>
+                                    <td>✗ Rechazado</td>
+                                    <td>Ver | Editar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="margin-top: 15px; font-size: 11px; color: #999;">
+                            Página 1 de N | Mostrando 1-4 de 1,247 resultados | 
+                            [◄ Anterior] [Siguiente ►]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; color: #999; font-size: 12px; margin-top: 60px;">
+            <p>Wireframe especificación - Blanco y Negro (Low-Fidelity)</p>
+            <p>Importar a Figma para componentes, tipografía y espaciado precisos</p>
+        </div>
+    </div>
+</body>
+</html>

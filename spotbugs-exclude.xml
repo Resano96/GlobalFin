@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Excluir tests de análisis de bugs -->
+    <Match>
+        <Class name="~.*Test$"/>
+    </Match>
+
+    <!-- Excluir clases generadas -->
+    <Match>
+        <Class name="~.*\.Generated.*"/>
+    </Match>
+
+    <!-- Ignorar warnings de serialización en DTOs (pueden tenerlo) -->
+    <Match>
+        <Bug code="SE"/>
+        <Class name="~com\.globalfin\.dto\..*"/>
+    </Match>
+
+    <!-- Reportar todos los demás como críticos/altos -->
+    <Match>
+        <Bug code="NP"/><!-- Null pointer dereference -->
+        <Priority value="1"/>
+    </Match>
+
+    <Match>
+        <Bug code="SQL"/><!-- SQL injection -->
+        <Priority value="1"/>
+    </Match>
+
+    <Match>
+        <Bug code="XSS"/><!-- Cross-site scripting -->
+        <Priority value="1"/>
+    </Match>
+
+</FindBugsFilter>

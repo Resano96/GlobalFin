@@ -1,0 +1,355 @@
+{
+  "project": "GlobalFin",
+  "wireframes": {
+    "b2b_dashboard": {
+      "screens": [
+        {
+          "id": "b2b_login",
+          "name": "Login B2B",
+          "description": "Autenticación de empleados",
+          "viewport": "1280x1024",
+          "elements": [
+            {
+              "type": "container",
+              "id": "header",
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 80,
+              "background": "#FFFFFF",
+              "border": "1px solid #E0E0E0",
+              "children": [
+                {
+                  "type": "text",
+                  "content": "GlobalFin",
+                  "fontSize": 24,
+                  "fontWeight": "bold",
+                  "x": 40,
+                  "y": 20
+                },
+                {
+                  "type": "text",
+                  "content": "Banking Services",
+                  "fontSize": 12,
+                  "color": "#666666",
+                  "x": 40,
+                  "y": 50
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "id": "form_container",
+              "x": 400,
+              "y": 250,
+              "width": 480,
+              "height": 400,
+              "background": "#FFFFFF",
+              "border": "1px solid #CCCCCC",
+              "shadow": "0 2px 8px rgba(0,0,0,0.1)",
+              "children": [
+                {
+                  "type": "text",
+                  "content": "Inicia sesión",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "x": 40,
+                  "y": 30
+                },
+                {
+                  "type": "label",
+                  "content": "Email",
+                  "fontSize": 12,
+                  "fontWeight": "bold",
+                  "x": 40,
+                  "y": 90
+                },
+                {
+                  "type": "textinput",
+                  "placeholder": "tu@globalfin.com",
+                  "x": 40,
+                  "y": 110,
+                  "width": 400,
+                  "height": 40,
+                  "border": "1px solid #999999"
+                },
+                {
+                  "type": "label",
+                  "content": "Contraseña",
+                  "fontSize": 12,
+                  "fontWeight": "bold",
+                  "x": 40,
+                  "y": 170
+                },
+                {
+                  "type": "textinput",
+                  "placeholder": "••••••••••",
+                  "x": 40,
+                  "y": 190,
+                  "width": 400,
+                  "height": 40,
+                  "border": "1px solid #999999",
+                  "type": "password"
+                },
+                {
+                  "type": "link",
+                  "content": "¿Olvidaste tu contraseña?",
+                  "fontSize": 11,
+                  "color": "#0066CC",
+                  "x": 40,
+                  "y": 245
+                },
+                {
+                  "type": "button",
+                  "content": "Ingresar",
+                  "x": 40,
+                  "y": 290,
+                  "width": 400,
+                  "height": 44,
+                  "background": "#333333",
+                  "color": "#FFFFFF",
+                  "border": "none",
+                  "fontSize": 14,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "content": "v1.0.0 | © 2026 GlobalFin",
+                  "fontSize": 10,
+                  "color": "#999999",
+                  "x": 40,
+                  "y": 360
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b2b_dashboard",
+          "name": "Dashboard Principal",
+          "description": "Home con KPIs y últimas transacciones",
+          "viewport": "1280x1024",
+          "elements": [
+            {
+              "type": "container",
+              "id": "sidebar",
+              "x": 0,
+              "y": 0,
+              "width": 250,
+              "height": 1024,
+              "background": "#F5F5F5",
+              "border": "1px solid #D0D0D0"
+            },
+            {
+              "type": "container",
+              "id": "main_content",
+              "x": 250,
+              "y": 0,
+              "width": 1030,
+              "height": 1024"
+            }
+          ]
+        }
+      ]
+    },
+    "b2c_app": {
+      "screens": [
+        {
+          "id": "b2c_splash",
+          "name": "Splash Screen",
+          "description": "Pantalla inicial (2 seg)",
+          "viewport": "375x667",
+          "elements": [
+            {
+              "type": "rectangle",
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 667,
+              "background": "#FFFFFF"
+            },
+            {
+              "type": "circle",
+              "x": 150,
+              "y": 200,
+              "radius": 50,
+              "background": "none",
+              "border": "3px solid #333333"
+            },
+            {
+              "type": "text",
+              "content": "GlobalFin",
+              "fontSize": 32,
+              "fontWeight": "bold",
+              "x": 50,
+              "y": 310,
+              "width": 275,
+              "textAlign": "center"
+            },
+            {
+              "type": "text",
+              "content": "Banca para todos",
+              "fontSize": 14,
+              "color": "#666666",
+              "x": 50,
+              "y": 360,
+              "width": 275,
+              "textAlign": "center"
+            },
+            {
+              "type": "circle",
+              "x": 162,
+              "y": 500,
+              "radius": 15,
+              "background": "none",
+              "border": "2px solid #333333",
+              "annotation": "Loading spinner"
+            }
+          ]
+        },
+        {
+          "id": "b2c_login",
+          "name": "Login B2C",
+          "description": "Formulario de autenticación (mobile)",
+          "viewport": "375x667",
+          "elements": [
+            {
+              "type": "rectangle",
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 667,
+              "background": "#FFFFFF"
+            },
+            {
+              "type": "container",
+              "id": "app_bar",
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 56,
+              "background": "#333333"
+            },
+            {
+              "type": "text",
+              "content": "GlobalFin",
+              "fontSize": 18,
+              "color": "#FFFFFF",
+              "fontWeight": "bold",
+              "x": 20,
+              "y": 18
+            },
+            {
+              "type": "text",
+              "content": "Bienvenido",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "x": 24,
+              "y": 100
+            },
+            {
+              "type": "text",
+              "content": "Ingresa con tu cuenta",
+              "fontSize": 14,
+              "color": "#999999",
+              "x": 24,
+              "y": 135
+            },
+            {
+              "type": "label",
+              "content": "Email",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "x": 24,
+              "y": 190
+            },
+            {
+              "type": "textinput",
+              "placeholder": "email@globalfin.com",
+              "x": 24,
+              "y": 210,
+              "width": 327,
+              "height": 44,
+              "border": "1px solid #CCCCCC",
+              "borderRadius": 4
+            },
+            {
+              "type": "label",
+              "content": "Contraseña",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "x": 24,
+              "y": 275
+            },
+            {
+              "type": "textinput",
+              "placeholder": "••••••••",
+              "x": 24,
+              "y": 295,
+              "width": 327,
+              "height": 44,
+              "border": "1px solid #CCCCCC",
+              "borderRadius": 4,
+              "type": "password"
+            },
+            {
+              "type": "link",
+              "content": "¿Olvidaste tu contraseña?",
+              "fontSize": 12,
+              "x": 280,
+              "y": 350,
+              "textAlign": "right"
+            },
+            {
+              "type": "button",
+              "content": "Ingresar",
+              "x": 24,
+              "y": 390,
+              "width": 327,
+              "height": 44,
+              "background": "#333333",
+              "color": "#FFFFFF",
+              "borderRadius": 4,
+              "fontSize": 14,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "text",
+              "content": "¿No tienes cuenta?",
+              "fontSize": 12,
+              "x": 100,
+              "y": 460"
+            },
+            {
+              "type": "link",
+              "content": "Regístrate aquí",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "x": 240,
+              "y": 460"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "colors": {
+    "primary": "#003DA5",
+    "success": "#2ECC71",
+    "error": "#E74C3C",
+    "warning": "#F39C12",
+    "dark": "#333333",
+    "light": "#F5F5F5",
+    "border": "#CCCCCC",
+    "text": "#000000",
+    "textLight": "#999999"
+  },
+  "typography": {
+    "heading1": "32px",
+    "heading2": "24px",
+    "heading3": "20px",
+    "body": "14px",
+    "caption": "12px",
+    "small": "10px"
+  }
+}

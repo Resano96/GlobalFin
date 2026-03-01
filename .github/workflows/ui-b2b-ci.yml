@@ -1,0 +1,51 @@
+name: UI B2B (JavaFX) - Build & Test
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'ui-b2b/**'
+      - '.github/workflows/ui-b2b-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'ui-b2b/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    
+    - name: Install JavaFX dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgtk-3-0
+    
+    - name: Build with Maven
+      working-directory: ui-b2b
+      run: mvn clean package -DskipTests
+    
+    - name: Run unit tests
+      working-directory: ui-b2b
+      run: mvn test
+    
+    - name: Run SpotBugs analysis
+      working-directory: ui-b2b
+      run: mvn spotbugs:check
+    
+    - name: Run Checkstyle
+      working-directory: ui-b2b
+      run: mvn checkstyle:check
+    
+    - name: Generate coverage report
+      working-directory: ui-b2b
+      run: mvn jacoco:report
